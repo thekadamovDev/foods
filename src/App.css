@@ -1,38 +1,436 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type:none ;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    width: 100%;
+    background-color: rgb(41, 40, 66);
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 90px 2fr 1fr;
+    grid-template-rows: 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(23, 22, 36);
+}
+.navbar-links ul li{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.navbar-links  a{
+    color: rgb(230, 99, 13);
+    padding: 15px;
+    transition: transform  .3s 0s ease;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+.navbar-links a:active{
+    background-color: rgb(230, 99, 13);
+    color: #fff;
+    border-radius: 10px;
+    transform: scale(.95);
 }
 
-.App-link {
-  color: #61dafb;
+.main{
+    width: 100%;
+    height: 100vh;
+    padding: 0px 30px;
+    overflow-y: auto;
+}
+.main-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+}
+.main-title h1{
+    font-weight: 600;
+    
+}
+.main-one{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+.input{
+    width: 220px;
+    height: 40px;
+    background-color: rgb(66, 65, 97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    color: #fff;
+}
+.input input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    padding: 5px;
+    outline: none;
+    
+}
+nav{
+    width: 100%;
+    position: relative;
+    
+}
+nav .lin{
+    padding-top: 12px;
+    border-bottom: 2px solid rgb(66, 65, 97);
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+nav ul li{
+    width: 100%;
+    display: flex;
+    gap: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+nav ul li a{
+    color: #fff;
+    font-size: 15px;
+}
+nav ul li a:active{
+    color: rgb(230, 99, 13);
+    padding-bottom: 20px ;
+    border-bottom: 2px solid rgb(230, 99, 13);
+}
+
+nav ul li a:active::after{
+    border-bottom: 1px solid rgb(230, 99, 13);
+    content: '';
+    width: 100%;
+    transform: translateY(-1px);
+}
+.main-cards{
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+.card-title h4{
+    font-size: 30px;
+    color: #fff;
+}
+.card-title button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    gap:7px;
+    width: 90px;
+    color: #fff;
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+    background-color: rgb(23, 22, 36);
+}
+.card img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    width: 120px;
+    height: 120px;
+}
+
+.cardss{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 75px;
+    
+}
+
+.card{
+    position: relative;
+    width: 200px;
+    height: 100%;
+    padding: 100px 10px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    text-align: center;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgb(23, 22, 36);
+}
+.card span{
+    font-weight: 500;
+    color: rgb(155, 157, 160);
+}
+::placeholder{
+    color: #fff;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+}
+
+
+.sidebar{
+    width: 450px;
+    height: 100vh;
+    background-color: rgb(23, 22, 36);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+.sidebar-one{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 20px;
+}
+
+.sidebar h1{
+    color: #fff;
+    font-size: 21px;
+    padding: 30px 20px 0px 20px;
+}
+.sidebar-btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0px 20px ;
+}
+.sidebar-btns button{
+    padding: 7px;
+    background-color: transparent;
+    border: 1px solid rgba(131, 131, 131, 0.514);
+    border-radius: 7px;
+    transition: all .2s ease;
+    color: rgb(230, 99, 13);
+}
+
+.sidebar-btns button:active{
+    background-color: rgb(230, 99, 13);
+    color: #fff;
+}
+.sidebar-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(66, 65, 97);
+    padding-bottom: 5px;
+    padding:0px 20px  5px 20px;
+}
+.sidebar-title span{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+.sidebar-title_span{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.sidebar-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+}
+
+.sidebar-up{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sidebar-up_one{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+}
+.sidebar-up_one img{
+    width: 45px;
+    height: 45px;
+}
+.sidebar-desc{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.sidebar-desc span{
+    font-size:12px;
+    color: rgb(151, 150, 150);
+}
+.sidebar-up_two{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.sidebar-num{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-num input{
+    width: 40px;
+    height: 40px;
+    background-color:  rgba(131, 131, 131, 0.514);
+    padding: 15px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+}
+.total-price{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+.sidebar-down{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.sidebar-down input{
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+    background-color: rgba(131, 131, 131, 0.514);
+    border: none;
+    padding: 0px 10px;
+    outline: none;
+    color: #fff;
+}
+
+
+.sidebar-down button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(231, 43, 43, 0.808);
+    background-color: transparent;
+    color: rgba(231, 43, 43, 0.808);
+    border-radius: 7px;
+}
+
+.card-footer{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(66, 65, 97);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 5px;
+    border-radius: 15px 15px 0px 0px ;
+    position: absolute;
+    bottom: 0;
+}
+.number,
+.totalPrice{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.number span,
+.totalPrice span{
+    color: #fff;
+    font-size: 20px;
+}
+
+.buttonf{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.buttonf button{
+    width: 200px;
+    height: 35px;
+    background-color: rgb(230, 99, 13);
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 15px;
+   transition: all .1s 0s ease-in;
+}
+
+.buttonf button:active{
+    background-color: transparent;
+    color: rgb(230, 99, 13);
+    border: 1px solid rgb(230, 99, 13);
+    transform: scale(.95);
+}
+
+.bb{
+    border-bottom: 1px  dashed #fff;
+}
+.ic{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.open{
+    transform: translateY(0);
+    transition: all .3s 0s ease;
+}
+.close{
+    transform:  translateY(100%);
+    transition: all .3s 0s ease;
 }

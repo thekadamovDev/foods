@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1125px){
+    .sidebar-desc h5{
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .sidebar{
+        display: none;
+    }
+    
+}
